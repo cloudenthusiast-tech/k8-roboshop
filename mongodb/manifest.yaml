@@ -28,12 +28,12 @@ spec:
       - name: mongodb
         image: aravind527/mongodb:v1
         imagePullPolicy: Always
-      readinessProbe:
+        readinessProbe:
           tcpSocket:
             port: 27017
           initialDelaySeconds: 15
           periodSeconds: 10
-      livenessProbe:
+        livenessProbe:
           tcpSocket:
             port: 27017
           initialDelaySeconds: 5
@@ -41,7 +41,7 @@ spec:
 
 ---
 apiVersion: v1
-kind: service
+kind: Service
 metadata:
   name: mongodb
   namespace: roboshop
