@@ -23,7 +23,7 @@ spec:
       component: mongodb
       environment: dev
       tier: db
-    spec:
+   spec:
       containers:
       - name: mongodb
         image: aravind527/mongodb:v1
