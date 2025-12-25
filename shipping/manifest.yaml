@@ -29,26 +29,26 @@ spec:
         project: roboshop
         component: shipping
         tier: backend
-  spec:
-    containers:
-    - name: shipping
-      image: aravind527/shipping:v1
-      imagePullPolicy: Always
-      envFrom:
-      - configMapRef:
-         name: shipping
-    readinessProbe:
-      httpGet:
-        path: /health
-        port: 8080 
-      failureThreshold: 1
-      periodSeconds: 15
-    livenessProbe:
-      httpGet:
-        path: /health
-        port: 8080
-      failureThreshold: 1
-      periodSeconds: 10
+    spec:
+      containers:
+      - name: shipping
+        image: aravind527/shipping:v1
+        imagePullPolicy: Always
+        envFrom:
+        - configMapRef:
+          name: shipping
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8080 
+          failureThreshold: 1
+          periodSeconds: 15
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          failureThreshold: 1
+          periodSeconds: 10
 
 ---
 apiVersion: v1

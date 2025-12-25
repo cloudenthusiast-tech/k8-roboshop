@@ -21,21 +21,21 @@ spec:
         project: roboshop
         component: redis
         tier: backend
-  spec:
-    containers:
-    - name: redis
-      image: aravind527/redis:v1
-      imagePullPolicy: Always
-    readinessProbe:
-      tcpSocket:
-        port: 6379
-      initialDelaySeconds: 10
-      periodSeconds: 5
-    livenessProbe:
-      tcpSocket:
-        port: 6379
-      initialDelaySeconds: 5
-      periodSeconds: 5
+    spec:
+      containers:
+      - name: redis
+        image: aravind527/redis:v1
+        imagePullPolicy: Always
+        readinessProbe:
+          tcpSocket:
+            port: 6379
+          initialDelaySeconds: 10
+          periodSeconds: 5
+        livenessProbe:
+          tcpSocket:
+            port: 6379
+          initialDelaySeconds: 5
+          periodSeconds: 5
 
 ---
 apiVersion: v1

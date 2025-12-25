@@ -21,21 +21,21 @@ spec:
         project: roboshop
         component: mysql
         tier: db
-  spec:
-    containers:
-    - name: mysql
-      image: aravind527/mysql:v1
-      imagePullPolicy: Always
-    readinessProbe:
-      tcpSocket:
-        port: 3306
-      initialDelaySeconds: 15
-      periodSeconds: 10
-    livenessProbe:
-      tcpSocket:
-        port: 3306
-      initialDelaySeconds: 10
-      periodSeconds: 5
+    spec:
+      containers:
+      - name: mysql
+        image: aravind527/mysql:v1
+        imagePullPolicy: Always
+        readinessProbe:
+          tcpSocket:
+            port: 3306
+          initialDelaySeconds: 15
+          periodSeconds: 10
+        livenessProbe:
+          tcpSocket:
+            port: 3306
+          initialDelaySeconds: 10
+          periodSeconds: 5
 
 ---
 apiVersion: v1

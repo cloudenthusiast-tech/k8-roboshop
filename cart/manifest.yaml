@@ -31,26 +31,26 @@ spec:
         project: roboshop
         component: cart
         tier: backend
-  spec:
-    containers:
-    - name: cart
-      image: aravind527/cart:v1
-      imagePullPolicy: Always
-      envFrom:
-      - configMapRef:
-         name: cart
-    readinessProbe:
-      httpGet:
-        path: /health
-        port: 8080 
-      failureThreshold: 1
-      periodSeconds: 15
-    livenessProbe:
-      httpGet:
-        path: /health
-        port: 8080
-      failureThreshold: 1
-      periodSeconds: 10
+    spec:
+      containers:
+      - name: cart
+        image: aravind527/cart:v1
+        imagePullPolicy: Always
+        envFrom:
+        - configMapRef:
+          name: cart
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8080 
+          failureThreshold: 1
+          periodSeconds: 15
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          failureThreshold: 1
+          periodSeconds: 10
 
 ---
 apiVersion: v1

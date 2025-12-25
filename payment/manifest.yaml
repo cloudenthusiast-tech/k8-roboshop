@@ -35,26 +35,26 @@ spec:
         project: roboshop
         component: payment
         tier: backend
-  spec:
-    containers:
-    - name: payment
-      image: aravind527/payment:v1
-      imagePullPolicy: Always
-      envFrom:
-      - configMapRef:
-         name: payment
-    readinessProbe:
-      httpGet:
-        path: /health
-        port: 8080 
-      failureThreshold: 1
-      periodSeconds: 15
-    livenessProbe:
-      httpGet:
-        path: /health
-        port: 8080
-      failureThreshold: 1
-      periodSeconds: 15
+    spec:
+      containers:
+      - name: payment
+        image: aravind527/payment:v1
+        imagePullPolicy: Always
+        envFrom:
+        - configMapRef:
+          name: payment
+        readinessProbe:
+          httpGet:
+            path: /health
+            port: 8080 
+          failureThreshold: 1
+          periodSeconds: 15
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          failureThreshold: 1
+          periodSeconds: 15
 
 ---
 apiVersion: v1

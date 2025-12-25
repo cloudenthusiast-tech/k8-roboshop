@@ -31,26 +31,26 @@ spec:
         project: roboshop
         component: user
         tier: backend
-  spec:
-    containers:
-    - name: user
-      image: aravind527/user:v1
-      imagePullPolicy: Always
-      envFrom:
-      - configMapRef:
-         name: user
-    readinessProbe:
-      httpGet:
-        path: /health
-        port: 8080 
-      failureThreshold: 1
-      periodSeconds: 15
-    livenessProbe:
-      httpGet:
-        path: /health
-        port: 8080
-      failureThreshold: 1
-      periodSeconds: 10
+    spec:
+     containers:
+     - name: user
+       image: aravind527/user:v1
+       imagePullPolicy: Always
+       envFrom:
+       - configMapRef:
+           name: user
+         readinessProbe:
+          httpGet:
+            path: /health
+            port: 8080 
+          failureThreshold: 1
+          periodSeconds: 15
+         livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+          failureThreshold: 1
+          periodSeconds: 10
 
 ---
 apiVersion: v1
@@ -60,7 +60,7 @@ metadata:
   namespace: roboshop
 spec:
   selector:
-    project: roboshop
+    projrect: roboshop
     component: user
     tier: backend
   ports:
