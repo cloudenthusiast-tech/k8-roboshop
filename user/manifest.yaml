@@ -39,13 +39,13 @@ spec:
        envFrom:
        - configMapRef:
            name: user
-         readinessProbe:
+       readinessProbe:
           httpGet:
             path: /health
             port: 8080 
           failureThreshold: 1
           periodSeconds: 15
-         livenessProbe:
+       livenessProbe:
           httpGet:
             path: /health
             port: 8080
