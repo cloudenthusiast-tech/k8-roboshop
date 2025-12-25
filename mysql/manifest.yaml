@@ -52,9 +52,9 @@ spec:
 
 
     volumes:
-    - name: mysql-config
-      configMap:
-        name: mysql
+      - name: mysql-config
+        configMap:
+          name: mysql
 ---
 apiVersion: v1
 kind: Service
