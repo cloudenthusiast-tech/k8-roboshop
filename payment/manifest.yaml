@@ -42,7 +42,7 @@ spec:
         imagePullPolicy: Always
         envFrom:
         - configMapRef:
-          name: payment
+            name: payment
         readinessProbe:
           httpGet:
             path: /health
